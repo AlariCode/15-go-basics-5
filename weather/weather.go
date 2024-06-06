@@ -15,7 +15,7 @@ func GetWeather(geo geo.GeoData, format int) string {
 		return ""
 	}
 	params := url.Values{}
-	params.Add("format", string(format))
+	params.Add("format", fmt.Sprint(format))
 	baseUrl.RawQuery = params.Encode()
 	resp, err := http.Get(baseUrl.String())
 	if err != nil {
